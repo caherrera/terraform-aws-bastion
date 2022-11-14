@@ -25,6 +25,7 @@ resource "aws_subnet" "bastion" {
 
 module "bastion" {
   source        = "caherrera/bastion/aws"
+  version       = "0.1.0"
   subnet_id     = aws_subnet.bastion[0].id
   name          = "Bastion"
   key_pair_name = "carlos-itline-key"
