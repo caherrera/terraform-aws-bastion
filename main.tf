@@ -1,3 +1,9 @@
+/**
+ * # AWS EC2 SSH Bastion Terraform Module
+ * Terraform module which creates EC2 instance as SSH Bastion
+ */
+
+
 data "aws_ami" "ubuntu" {
   most_recent = true
 

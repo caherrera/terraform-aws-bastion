@@ -1,43 +1,15 @@
 # AWS EC2 SSH Bastion Terraform Module
-
 Terraform module which creates EC2 instance as SSH Bastion
 
 ## Requirements
 
 No requirements.
 
-## Usage
-
-```hcl
-resource "aws_vpc" "main" {
-  cidr_block           = var.cidr_block
-  enable_dns_support   = true
-  enable_dns_hostnames = true
-}
-
-resource "aws_subnet" "bastion" {
-  count                   = 1
-  cidr_block              = cidrsubnet(aws_vpc.main.cidr_block, 10, 888)
-  availability_zone       = data.aws_availability_zones.available.names[count.index]
-  vpc_id                  = aws_vpc.main.id
-  map_public_ip_on_launch = true
-}
-
-module "bastion" {
-  source        = "caherrera/bastion/aws"
-  version       = "0.1.0"
-  subnet_id     = aws_subnet.bastion[0].id
-  name          = "Bastion"
-  key_pair_name = "carlos-itline-key"
-
-}
-```
-
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.41.0 |
 
 ## Modules
 
@@ -69,4 +41,8 @@ module "bastion" {
 
 | Name | Description |
 |------|-------------|
+| <a name="output_aws_security_group"></a> [aws\_security\_group](#output\_aws\_security\_group) | n/a |
+| <a name="output_private_dns"></a> [private\_dns](#output\_private\_dns) | n/a |
 | <a name="output_private_ip"></a> [private\_ip](#output\_private\_ip) | The private IP address assigned to the instance. |
+| <a name="output_public_dns"></a> [public\_dns](#output\_public\_dns) | n/a |
+| <a name="output_public_ip"></a> [public\_ip](#output\_public\_ip) | n/a |

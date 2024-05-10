@@ -14,3 +14,7 @@ output "private_dns" {
 output "public_dns" {
   value = module.bastion.public_dns
 }
+
+output "aws_security_group" {
+  value = aws_security_group.ssh.id
+}
