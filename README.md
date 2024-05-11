@@ -34,6 +34,7 @@ No requirements.
 | <a name="input_associate_public_ip_address"></a> [associate\_public\_ip\_address](#input\_associate\_public\_ip\_address) | If true this module will create an ec2 instance as bastion. If false just create a local-network instance | `bool` | `true` | no |
 | <a name="input_key_pair_name"></a> [key\_pair\_name](#input\_key\_pair\_name) | n/a | `string` | `null` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for ec2 instance. also is prefix for SG | `string` | `"Bastion"` | no |
+| <a name="input_security_groups"></a> [security\_groups](#input\_security\_groups) | List of security groups to attach to the instance | `list(string)` | `[]` | no |
 | <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | Public Subnet where bastion will live | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | n/a | `any` | `null` | no |
 

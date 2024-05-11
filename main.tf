@@ -65,7 +65,7 @@ module "bastion" {
   instance_type               = "t2.micro"
   key_name                    = data.aws_key_pair.key.key_name
   monitoring                  = true
-  vpc_security_group_ids      = [aws_security_group.ssh.id]
+  vpc_security_group_ids      = concat([aws_security_group.ssh.id], var.security_groups)
   subnet_id                   = var.subnet_id
   tags                        = var.tags
   associate_public_ip_address = var.associate_public_ip_address

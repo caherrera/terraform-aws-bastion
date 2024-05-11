@@ -26,3 +26,9 @@ variable "associate_public_ip_address" {
   default     = true
   type        = bool
 }
+
+variable "security_groups" {
+  description = "List of security groups to attach to the instance"
+  type        = list(string)
+  default     = []
+}
